@@ -9,7 +9,6 @@ class Reynold
             double reynold;
     };
     
-
 int main() 
 {
     int type;
@@ -32,8 +31,7 @@ int main()
     gasoline.velocity = 0.09;
     gasoline.viscosity = 0.000000622;
     gasoline.reynold = (gasoline.velocity * diameter) / gasoline.viscosity;
-    
-    
+     
     //object of fuel oil
     Reynold fueloil;
     fueloil.velocity = 0.09;
@@ -51,12 +49,12 @@ int main()
     water.velocity = 0.09;
     water.viscosity = 0.000008999;
     water.reynold = (water.velocity * diameter) / water.viscosity;
-    
 
     cout << "\nYour fluid's Reynold's Number is " << Reynoldnum(type);
 
     cout << "\n";
     
+    return 0;
 }
 
 int Reynoldnum(type)
@@ -68,13 +66,11 @@ int Reynoldnum(type)
         case '1': 
         {
             return gasoline.reynold;
-            
         }
         break;
         case '2': 
         {
             return fueloil.reynold;
-            
         }
         break;
         case '3': 
