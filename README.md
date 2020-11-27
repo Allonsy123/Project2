@@ -12,9 +12,9 @@ Re>3000 (turbulent)
 
 //
 Fluid
-Kinematic viscosity (m2/s) at 40 deg C 
-Pipe diameter (m)
-Average fluid speed (m/s)
+Kinematic viscosity (m2/s) at 40 deg C | 
+Pipe diameter (m) | 
+Average fluid speed (m/s) 
 //
 Gasoline: 
 0.0622*10^-5 | 
