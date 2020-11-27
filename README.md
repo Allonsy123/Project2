@@ -16,25 +16,25 @@ Kinematic viscosity (m2/s) at 40 deg C
 Pipe diameter (m)
 Average fluid speed (m/s)
 //
-Gasoline
-0.0622*10^-5
-0.1
-0.09
+Gasoline: 
+0.0622*10^-5 | 
+0.1 | 
+0.09 | 
 //
 Fuel oil
-0.3523*10^-5
-0.1
-0.09
+0.3523*10^-5 | 
+0.1 | 
+0.09 | 
 //
 Lubricating oil
-9.5966*10^-5
-0.1
-0.09
+9.5966*10^-5 | 
+0.1 | 
+0.09 | 
 //
 water
-0.8999*10^-5
-0.1
-0.09
+0.8999*10^-5 | 
+0.1 | 
+0.09 | 
 
 
 The following link is useful:
