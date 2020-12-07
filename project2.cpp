@@ -50,25 +50,21 @@ double reynoldnum(int type)
         case '1': 
         {
             return gasoline.reynold;
-            cout << gasoline.reynold;
         }
         break;
         case '2': 
         {
             return fueloil.reynold;
-            cout << fueloil.reynold;
         }
         break;
         case '3': 
         {
             return lubricatingoil.reynold;
-            cout << lubricatingoil.reynold;
         }
         break;
         case '4': 
         {
             return water.reynold;
-            cout << water.reynold;
         }
         break;
         default : cout << "We currently don't have that fluid type";
