@@ -4,11 +4,10 @@ using namespace std;
 class Reynold
     {
         public:
-            long double velocity;
-            long double viscosity;
-            long double reynold;
+            double velocity;
+            double viscosity;
+            double reynold;
     };
-    
 
 double reynoldnum(int type)
 {
@@ -23,27 +22,26 @@ double reynoldnum(int type)
     //object of gasoline
     Reynold gasoline;
     gasoline.velocity = 0.09;
-    gasoline.viscosity = 0.000000622;
+    gasoline.viscosity = 311 / 500000000;
     gasoline.reynold = (gasoline.velocity * diameter) / gasoline.viscosity;
      
     //object of fuel oil
     Reynold fueloil;
     fueloil.velocity = 0.09;
-    fueloil.viscosity = 0.000003523;
+    fueloil.viscosity = 3523 / 1000000000;
     fueloil.reynold = (fueloil.velocity * diameter) / fueloil.viscosity;
     
     //object of lubricating oil
     Reynold lubricatingoil;
     lubricatingoil.velocity = 0.09;
-    lubricatingoil.viscosity = 0.000095966;
+    lubricatingoil.viscosity = 95966 / 1000000000;
     lubricatingoil.reynold = (lubricatingoil.velocity * diameter) / lubricatingoil.viscosity;
     
     //object of water
     Reynold water;
     water.velocity = 0.09;
-    water.viscosity = 0.000008999;
+    water.viscosity = 8999 / 1000000000;
     water.reynold = (water.velocity * diameter) / water.viscosity;
-    
     
     //Reynold's Number = (average velocity * internal pipe diameter) / kinematic viscosity
     
@@ -73,13 +71,10 @@ double reynoldnum(int type)
             cout << water.reynold;
         }
         break;
-
         default : cout << "We currently don't have that fluid type";
         // no break for default
     }
 }
-
-
 
 int main() 
 {
@@ -95,9 +90,20 @@ int main()
     double rey = reynoldnum(type);
     
     cout << "\nYour fluid's Reynold's Number is " << rey;
-
     cout << "\n";
+    
+    if (rey < 2000)
+    {
+        cout << "You have a laminar flow";
+    }
+    else if (2000 <= rey <= 3000)
+    {
+        cout << "You have a transition flow";
+    }
+    else if (3000 < rey)
+    {
+        cout << "You have a turbulent flow";
+    }
     
     return 0;
 }
-
