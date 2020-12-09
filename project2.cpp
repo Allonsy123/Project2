@@ -1,105 +1,65 @@
 #include <iostream>
 using namespace std;
-
-class Reynold
-    {
-        public:
-            double velocity;
-            double viscosity;
-            double reynold;
-    };
-
-double reynoldnum(int type)
+double flow(double Reynum)
 {
-    float diameter;
-    
-    cout << "Please enter your fluid selection: ";
-    cin >> type;
-    
-    cout << "Please enter the pipe diamater: ";
-    cin >> diameter;
-    
-    //object of gasoline
-    Reynold gasoline;
-    gasoline.velocity = 0.09;
-    gasoline.viscosity = 311 / 500000000;
-    gasoline.reynold = (gasoline.velocity * diameter) / gasoline.viscosity;
-     
-    //object of fuel oil
-    Reynold fueloil;
-    fueloil.velocity = 0.09;
-    fueloil.viscosity = 3523 / 1000000000;
-    fueloil.reynold = (fueloil.velocity * diameter) / fueloil.viscosity;
-    
-    //object of lubricating oil
-    Reynold lubricatingoil;
-    lubricatingoil.velocity = 0.09;
-    lubricatingoil.viscosity = 95966 / 1000000000;
-    lubricatingoil.reynold = (lubricatingoil.velocity * diameter) / lubricatingoil.viscosity;
-    
-    //object of water
-    Reynold water;
-    water.velocity = 0.09;
-    water.viscosity = 8999 / 1000000000;
-    water.reynold = (water.velocity * diameter) / water.viscosity;
-    
-    //Reynold's Number = (average velocity * internal pipe diameter) / kinematic viscosity
-    
-    switch(type)
+    if (Reynum < 2000)
     {
-        case '1': 
-        {
-            return gasoline.reynold;
-        }
-        break;
-        case '2': 
-        {
-            return fueloil.reynold;
-        }
-        break;
-        case '3': 
-        {
-            return lubricatingoil.reynold;
-        }
-        break;
-        case '4': 
-        {
-            return water.reynold;
-        }
-        break;
-        default : cout << "We currently don't have that fluid type";
-        // no break for default
+        cout << "It will have a laminar flow.";
+        return 0;
+    }
+    if (2000 <= Reynum && Reynum <= 3000)
+    {
+        cout << "It will have a transition flow.";
+        return 0;
+    }
+    if (3000 < Reynum)
+    {
+        cout << "It will have a turbulent flow.";
+        return 0;
     }
 }
 
 int main() 
 {
-    int type; 
+    int type;
+    float diameter;
     
-    cout << "\nMenu of Fluids\n";
-    cout << "==========\n";
+    cout << "Choose your fluid type:" << endl;
     cout << "1 - gasoline\n";
     cout << "2 - fuel oil\n";
     cout << "3 - lubricating oil\n";
     cout << "4 - water\n";
     
-    double rey = reynoldnum(type);
+    cin >> type;
+    cout << "Enter the pipe diameter:" << endl;
+    cin >> diameter;
     
-    cout << "\nYour fluid's Reynold's Number is " << rey;
-    cout << "\n";
-    
-    if (rey < 2000)
+    if (type == 1)
     {
-        cout << "You have a laminar flow";
+        double Reynum = (0.09 * diameter) / 0.000000622;
+        double gasoline = flow(Reynum);
+        return 0;
     }
-    else if (2000 <= rey <= 3000)
+    if (type == 2)
     {
-        cout << "You have a transition flow";
+        double Reynum = (0.09 * diameter) / 0.000003523;
+        double fueloil = flow(Reynum);
+        return 0;
     }
-    else if (3000 < rey)
+    if (type == 3)
     {
-        cout << "You have a turbulent flow";
+        double Reynum = (0.09 * diameter) / 0.000095966;
+        double lubeoil = flow(Reynum);
+        return 0;
     }
-    
-    return 0;
+    if (type == 4)
+    {
+        double Reynum = (0.09 * diameter) / 0.000008999;
+        double water = flow(Reynum);
+        return 0;
+    }
+    else
+    {
+        cout << "Invalid fluid type";
+    }
 }
